@@ -23,7 +23,7 @@ rp.get('https://www.gitlab.com/api/v4/groups', {
   let promises = [];
   for (let gid of gids) {
     promises.push(
-      rp.get(`https://www.gitlab.com/api/v4/groups/${gid}/projects`, {
+      rp.get(`https://www.gitlab.com/api/v4/groups/${gid}/projects?order_by=name&sort=asc&per_page=200`, {
         json: true,
         qs: {
           simple: true,
